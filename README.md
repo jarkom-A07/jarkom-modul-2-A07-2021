@@ -73,7 +73,7 @@ bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
 
 ## Jawaban:
 
-Karena kelompok kami adalah A07 maka kami menggunakan IP: 192.171.x.x
+Karena kelompok kami adalah A07 maka kami menggunakan IP: 192.172.x.x
 
 ## no. 1
 Konfigurasi Node
@@ -92,7 +92,7 @@ Memasukkan perintah berikut agar node dapat terhubung internet.
 -   Loguetown
 
 Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
-yaitu 192.171.1.2.
+yaitu 192.172.1.2.
 
 ![](.//media/image10.png)
 
@@ -105,7 +105,7 @@ Uji koneksi pada node ini.
 -   Alabasta
 
 Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
-yaitu 192.171.1.3.
+yaitu 192.172.1.3.
 
 ![](.//media/image6.png)
 
@@ -118,7 +118,7 @@ Uji koneksi pada node ini.
 -   EniesLobby
 
 Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
-yaitu 192.171.2.2.
+yaitu 192.172.2.2.
 
 ![](.//media/image4.png)
 
@@ -131,7 +131,7 @@ Uji koneksi pada node ini.
 -   Water7
 
 Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
-yaitu 192.171.2.3.
+yaitu 192.172.2.3.
 
 ![](.//media/image12.png)
 
@@ -144,7 +144,7 @@ Uji koneksi pada node ini.
 -   Skypie
 
 Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
-yaitu 192.171.2.4.
+yaitu 192.172.2.4.
 
 ![](.//media/image24.png)
 
@@ -197,13 +197,13 @@ Membuat reverse domain utama
 Menuliskan perintah-perintah yang digunakan ke dalam bash script di
 EniesLobby. Perintah ini terdiri dari instalasi penambahan konfigurasi
 pada named.conf.local untuk reverse domain dan pada
-kaizoku/2.171.192.in-addr.arpa.
+kaizoku/2.172.192.in-addr.arpa.
 
 ![](.//media/image26.png)
 
 
 Untuk dapat memastikan pembuatan reverse domain berhasil maka dilakukan
-pengecekan host pada IP 192.171.2.2 dengan mengarahkan nameserver pada
+pengecekan host pada IP 192.172.2.2 dengan mengarahkan nameserver pada
 EniesLobby. Namun sebelumnya perlu dilakukan instalasi dnsutils dengan
 mengarahkan nameserver pada router untuk mendapatakan akses internet.
 
