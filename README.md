@@ -1,4 +1,298 @@
-# jarkom-modul-2-A07-2021
+# Jarkom-Modul-2-A07-2021
+Laporan resmi berisi dokumentasi soal Jarkom Modul 2.
+---
+Kelompok A-07:
+- [Arkan Aulia Farhan](): 05111940000128
+- [Muchamad Maroqi Abdul Jalil](https://github.com/maroqijalil): 05111940000143
+- [Syamil Difaul Haq Sukur](https://github.com/Syamil28): 05111940000196
+---
+
+## Soal praktikum:
+
+Luffy adalah seorang yang akan jadi Raja Bajak Laut. Demi membuat Luffy
+menjadi Raja Bajak Laut, Nami ingin membuat sebuah peta, bantu Nami
+untuk membuat peta berikut:
+
+![](.//media/image5.png)
+
+EniesLobby akan dijadikan sebagai DNS Master, Water7 akan dijadikan DNS
+Slave, dan Skypie akan digunakan sebagai Web Server. Terdapat 2 Client
+yaitu Loguetown, dan Alabasta. Semua node terhubung pada router Foosha,
+sehingga dapat mengakses internet (1).
+
+Luffy ingin menghubungi Franky yang berada di EniesLobby dengan denden
+mushi. Kalian diminta Luffy untuk membuat website utama dengan mengakses
+**franky.yyy.com** dengan alias **www.franky.yyy.com** pada folder
+kaizoku (2). Setelah itu buat subdomain **super.franky.yyy.com** dengan
+alias **www.super.franky.yyy.com** yang diatur DNS nya di EniesLobby dan
+mengarah ke Skypie(3). Buat juga reverse domain untuk domain utama (4).
+Supaya tetap bisa menghubungi Franky jika server EniesLobby rusak, maka
+buat Water7 sebagai DNS Slave untuk domain utama (5). Setelah itu
+terdapat subdomain **mecha.franky.yyy.com** dengan alias
+**www.mecha.franky.yyy.com** yang didelegasikan dari EniesLobby ke
+Water7 dengan IP menuju ke Skypie dalam folder sunnygo(6). Untuk
+memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui
+Franky dengan nama **general.mecha.frank.yyy.com** dengan alias
+**www.general.mecha.franky.yyy.com** yang mengarah ke Skypie(7).
+
+\(8) Setelah melakukan konfigurasi server, maka dilakukan konfigurasi
+Webserver. Pertama dengan webserver
+[**www.franky.yyy.com**](http://www.franky.com). Pertama, luffy
+membutuhkan webserver dengan DocumentRoot pada /var/www/franky.yyy.com.
+(9) Setelah itu, Luffy juga membutuhkan agar url
+[**www.franky.yyy.com/index.php/home**](http://www.franky.com/index.php/home)
+dapat menjadi menjadi
+[**www.franky.yyy.com/home**](http://www.franky.com/home).
+
+\(10) Setelah itu, pada subdomain
+[**www.super.franky.yyy.com**](http://www.super.franky.com), Luffy
+membutuhkan penyimpanan aset yang memiliki DocumentRoot pada
+/var/www/super.franky.yyy.com .(11) Akan tetapi, pada folder /public,
+Luffy ingin hanya dapat melakukan directory listing saja.(12) Tidak
+hanya itu, Luffy juga menyiapkan error file 404.html pada folder /errors
+untuk mengganti error kode pada apache . (13) Luffy juga meminta Nami
+untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan
+untuk dapat mengakses file asset
+**[www.super.franky.yyy.com/](http://www.super.franky.xxx.com/js)public/js**
+menjadi
+[**www.super.franky.yyy.com/js**](http://www.super.franky.xxx.com/js).
+
+\(14) Dan Luffy meminta untuk web
+[**www.general.mecha.franky.yyy.com**](http://www.mecha.franky.com)
+hanya bisa diakses dengan port 15000 dan port 15500 (15) dengan
+authentikasi username luffy dan password onepiece dan file di
+/var/www/general.mecha.franky.yyy (16) Dan setiap kali mengakses IP
+EniesLobby akan diahlikan secara otomatis ke
+[**www.franky.yyy.com**](http://www.franky.xxx.com) (17). Dikarenakan
+Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui
+website [w**ww.super.franky.yyy.com**](http://www.super.franky.com), dan
+dikarenakan pengunjung web server pasti akan bingung dengan randomnya
+images yang ada, maka Franky juga meminta untuk mengganti request gambar
+yang memiliki substring "franky" akan diarahkan menuju franky.png. Maka
+bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
+
+## Jawaban:
+
+Karena kelompok kami adalah A07 maka kami menggunakan IP: 192.171.x.x
+
+## no. 1
+Konfigurasi Node
+
+### Jawab
+-   Foosha
+
+Melakukan konfigurasi Foosha sebagai Router dari semua device nantinya.
+
+![](.//media/image35.png)
+
+Memasukkan perintah berikut agar node dapat terhubung internet.
+
+![](.//media/image3.png)
+
+-   Loguetown
+
+Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
+yaitu 192.171.1.2.
+
+![](.//media/image10.png)
+
+
+Uji koneksi pada node ini.
+
+![](.//media/image21.png)
+
+
+-   Alabasta
+
+Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
+yaitu 192.171.1.3.
+
+![](.//media/image6.png)
+
+
+Uji koneksi pada node ini.
+
+![](.//media/image18.png)
+
+
+-   EniesLobby
+
+Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
+yaitu 192.171.2.2.
+
+![](.//media/image4.png)
+
+
+Uji koneksi pada node ini.
+
+![](.//media/image34.png)
+
+
+-   Water7
+
+Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
+yaitu 192.171.2.3.
+
+![](.//media/image12.png)
+
+
+Uji koneksi pada node ini.
+
+![](.//media/image29.png)
+
+
+-   Skypie
+
+Melakukan konfigurasi pada sesuai dengan alokasi IP yang diperuntukkan,
+yaitu 192.171.2.4.
+
+![](.//media/image24.png)
+
+
+Uji koneksi pada node ini.
+
+![](.//media/image16.png)
+
+
+## no. 2
+Membuat domain franky.A07.com dengan alias www
+
+### Jawab
+Menuliskan perintah-perintah yang digunakan ke dalam bash script di
+EniesLobby. Perintah ini terdiri dari instalasi package bind9, kemudian
+dilanjut dengan penambahan konfigurasi pada named.conf.local dan pada
+kaizoku/franky.A07.com.
+
+![](.//media/image14.png)
+
+Untuk dapat memastikan pembuatan domain berhasil maka dilakukan ping
+terhadap domain www.franky.A07.com dengan mengarahkan nameserver pada
+EniesLobby.
+
+![](.//media/image22.png)
+
+
+## no. 3
+Membuat domain super.franky.A07.com dengan alias www.super.franky.A07.com
+
+### Jawab
+Menuliskan perintah-perintah yang digunakan ke dalam bash script di
+EniesLobby. Perintah ini adalah melakukan penambahan subdomain super
+pada kaizoku/franky.A07.com.
+
+![](.//media/image8.png)
+
+
+Untuk dapat memastikan pembuatan subdomain berhasil maka dilakukan ping
+terhadap domain www.super.franky.A07.com dengan mengarahkan nameserver
+pada EniesLobby.
+
+![](.//media/image23.png)
+
+
+## no. 4
+Membuat reverse domain utama
+
+### Jawab
+Menuliskan perintah-perintah yang digunakan ke dalam bash script di
+EniesLobby. Perintah ini terdiri dari instalasi penambahan konfigurasi
+pada named.conf.local untuk reverse domain dan pada
+kaizoku/2.171.192.in-addr.arpa.
+
+![](.//media/image26.png)
+
+
+Untuk dapat memastikan pembuatan reverse domain berhasil maka dilakukan
+pengecekan host pada IP 192.171.2.2 dengan mengarahkan nameserver pada
+EniesLobby. Namun sebelumnya perlu dilakukan instalasi dnsutils dengan
+mengarahkan nameserver pada router untuk mendapatakan akses internet.
+
+![](.//media/image7.png)
+![](.//media/image19.png)
+
+
+## no. 5
+Membuat DNS Slave dari EniesLobby ke Water7
+
+### Jawab
+-   EniesLobby
+
+Menuliskan perintah-perintah yang digunakan ke dalam bash script di
+EniesLobby. Perintah ini adalah melakukan penambahan konfigurasi pada
+named.conf.local.
+
+![](.//media/image17.png)
+
+
+-   Water7
+
+Lalu pada Water7 perlu dilakukan konfigurasi juga pada named.conf.local
+namun dengan type slave.
+
+![](.//media/image11.png)
+
+
+Untuk dapat memastikan pembuatan dns slave berhasil maka dilakukan ping
+terhadap domain.franky.A07.com dengan mengarahkan nameserver pada
+EniesLobby dan Water7 namun EniesLobby dalam kondisi bind9 stop.
+
+![](.//media/image32.png)
+
+
+## no. 6
+Melakukan delegeasi mecha.franky.A07.com ke Water7 dengan mengarahkan ke Skypie
+
+### Jawab
+-   EniesLobby
+
+Melakukan penambahan konfigurasi untuk subdomain mecha.franky.A07.com
+yang diarahkan ke IP Water7.
+
+![](.//media/image33.png)
+
+
+Mengubah konfigurasi pada named.conf.options.
+
+![](.//media/image15.png)
+
+
+Mengubah konfigurasi pada domain franky.A07.com di named.conf.local
+dengan mengarahkan pada IP Water7.
+
+![](.//media/image31.png)
+
+
+Setelah selesai maka dilakukan restart pada bind9.
+
+-   Water7
+
+Mengubah konfigurasi pada named.conf.options.
+
+![](.//media/image15.png)
+
+
+Melakukan konfigurasi pada named.conf.local dengan menambahkan subdomain
+mecha.franky.A07.com.
+
+![](.//media/image30.png)
+
+
+Terakhir menambahkan konfigurasi pada sunnygo/mecha.franky.A07.com,
+kemudian restart bind9.
+
+![](.//media/image20.png)
+
+
+## no. 7
+Membuat subdomain general.mecha.franky.A07.com di Water7 dengan mengarahkan ke Skypie
+
+### Jawab
+Melakukan penambahan konfigurasi untuk subdomain
+general.mecha.franky.A07.com yang diarahkan ke IP Skypie, kemudian
+restart bind9.
+
+![](.//media/image28.png)
+
 
 ## no. 8
 
