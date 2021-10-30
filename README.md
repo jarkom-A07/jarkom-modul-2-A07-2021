@@ -336,7 +336,7 @@ setelah itu pada terminal Skypie jalankan dengan perintah ``bash command.sh``
 
 ![](./images/Screenshot(217).png)
 
-3. Lakukan edit franky.A07.com.conf, pada kasus ini kami buat script bernama general-script.sh dengan comand v``im franky.A07.com.conf`` dan melakukan perintah seperti berikut:
+3. Lakukan edit franky.A07.com.conf, pada kasus ini kami buat script bernama general-script.sh dengan comand ``vim franky.A07.com.conf`` dan melakukan perintah seperti berikut:
 ``
 echo '<VirtualHost *:80>
  
@@ -347,7 +347,7 @@ echo '<VirtualHost *:80>
  ErrorLog ${APACHE_LOG_DIR}/error.log
  CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>' > /etc/apache2/sites-available/franky.A07.com.conf
-``
+`
 setelah itu jalankan dengan perintah bash ``franky.A07.com.conf``
 
 4. Aktifkan konfigurasi franky.A07.com dengan menggunakan perintah 
